@@ -14,6 +14,8 @@
 		D01AF7601E355BAC007FE431 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D01AF75E1E355BAC007FE431 /* LaunchScreen.storyboard */; };
 		D01AF76B1E355BAC007FE431 /* MinesweeperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01AF76A1E355BAC007FE431 /* MinesweeperUITests.swift */; };
 		D01AF7761E355BAC007FE431 /* MinesweeperUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01AF7751E355BAC007FE431 /* MinesweeperUIUITests.swift */; };
+		D01AF7841E355BE9007FE431 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01AF7831E355BE9007FE431 /* Board.swift */; };
+		D01AF7861E355C2A007FE431 /* MinesweeperObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01AF7851E355C2A007FE431 /* MinesweeperObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		D01AF7711E355BAC007FE431 /* MinesweeperUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinesweeperUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D01AF7751E355BAC007FE431 /* MinesweeperUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinesweeperUIUITests.swift; sourceTree = "<group>"; };
 		D01AF7771E355BAC007FE431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D01AF7831E355BE9007FE431 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		D01AF7851E355C2A007FE431 /* MinesweeperObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinesweeperObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				D01AF75C1E355BAC007FE431 /* Assets.xcassets */,
 				D01AF75E1E355BAC007FE431 /* LaunchScreen.storyboard */,
 				D01AF7611E355BAC007FE431 /* Info.plist */,
+				D01AF7831E355BE9007FE431 /* Board.swift */,
+				D01AF7851E355C2A007FE431 /* MinesweeperObject.swift */,
 			);
 			path = MinesweeperUI;
 			sourceTree = "<group>";
@@ -263,7 +269,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D01AF7581E355BAC007FE431 /* ViewController.swift in Sources */,
+				D01AF7861E355C2A007FE431 /* MinesweeperObject.swift in Sources */,
 				D01AF7561E355BAC007FE431 /* AppDelegate.swift in Sources */,
+				D01AF7841E355BE9007FE431 /* Board.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

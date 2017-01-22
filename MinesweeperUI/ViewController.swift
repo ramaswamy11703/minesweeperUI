@@ -23,3 +23,18 @@ class ViewController: UIViewController {
 
 }
 
+
+/**
+ display 2d grid
+ be able to show different icons for different cells
+ each cell will display various types with characters
+ have main ui object contain a board object
+ initialize board object when ui is initialized, display board data in ui
+ handle click by updating board state then repainting board state
+ handle bomb or victory
+ 
+ reset button - 
+ two screen ui with home and game/feature
+ make icons
+ */
+
