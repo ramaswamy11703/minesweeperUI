@@ -16,6 +16,7 @@
 		D01AF7761E355BAC007FE431 /* MinesweeperUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01AF7751E355BAC007FE431 /* MinesweeperUIUITests.swift */; };
 		D01AF7841E355BE9007FE431 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01AF7831E355BE9007FE431 /* Board.swift */; };
 		D01AF7861E355C2A007FE431 /* MinesweeperObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01AF7851E355C2A007FE431 /* MinesweeperObject.swift */; };
+		D072588B1E3577D40029B8FF /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D072588A1E3577D40029B8FF /* MyCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		D01AF7771E355BAC007FE431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D01AF7831E355BE9007FE431 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		D01AF7851E355C2A007FE431 /* MinesweeperObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinesweeperObject.swift; sourceTree = "<group>"; };
+		D072588A1E3577D40029B8FF /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				D01AF7611E355BAC007FE431 /* Info.plist */,
 				D01AF7831E355BE9007FE431 /* Board.swift */,
 				D01AF7851E355C2A007FE431 /* MinesweeperObject.swift */,
+				D072588A1E3577D40029B8FF /* MyCollectionViewCell.swift */,
 			);
 			path = MinesweeperUI;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D01AF7581E355BAC007FE431 /* ViewController.swift in Sources */,
+				D072588B1E3577D40029B8FF /* MyCollectionViewCell.swift in Sources */,
 				D01AF7861E355C2A007FE431 /* MinesweeperObject.swift in Sources */,
 				D01AF7561E355BAC007FE431 /* AppDelegate.swift in Sources */,
 				D01AF7841E355BE9007FE431 /* Board.swift in Sources */,
@@ -520,6 +524,7 @@
 				D01AF77C1E355BAC007FE431 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D01AF77D1E355BAC007FE431 /* Build configuration list for PBXNativeTarget "MinesweeperUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +533,7 @@
 				D01AF77F1E355BAC007FE431 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D01AF7801E355BAC007FE431 /* Build configuration list for PBXNativeTarget "MinesweeperUIUITests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +542,7 @@
 				D01AF7821E355BAC007FE431 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
