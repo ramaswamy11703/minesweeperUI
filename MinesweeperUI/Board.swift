@@ -30,8 +30,8 @@ class Board
             var minesweeperRow:[MinesweeperObject] = []
             for col in 0 ..< size
             {
-                //1 in size chance that space is a mine
-                let randomNum = arc4random_uniform(UInt32(size))
+                //1 in 5 chance that space is a mine - potentially change
+                let randomNum = arc4random_uniform(UInt32(5))
                 if (randomNum == 1)
                 {
                     let mObject = MinesweeperObject(row: row, col: col, neighboringMines: 0, isMine: !testing)
@@ -127,6 +127,10 @@ class Board
         
         mObject.isRevealed = true
         
+        if (mObject.neighboringMines > 0) {
+            return true
+        }
+        
         expandClick(row: row, col: col)
         
         return true
@@ -211,12 +215,6 @@ class Board
         return true
     }
     
-    func testMyLogic() {
-        // create board
-        // expose a cell
-        // print
-        // flag a cell
-    }
     
     /**
      Prints the game board for further usage
@@ -245,12 +243,6 @@ class Board
                 //                    colIndex += 1
                 //                }
                 
-                if (gameBoard[row][col].isFlagged)
-                {
-                    print("F ", terminator: "")
-                    continue
-                }
-                
                 if (gameBoard[row][col].isRevealed || printAll)
                 {
                     if (gameBoard[row][col].isMine) {
@@ -263,9 +255,12 @@ class Board
                 }
                 else
                 {
-                    //                    //REMOVE LATER
                     if (gameBoard[row][col].isMine) {
                         print("! ", terminator: "")
+                    }
+                    else if (gameBoard[row][col].isFlagged){
+                        print("F ", terminator: "")
+                        continue
                     }
                     else {
                         print("? ", terminator: "")
