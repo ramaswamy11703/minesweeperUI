@@ -46,10 +46,15 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HTb-2o-K8T">
+                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </view>
                                         <size key="customSize" width="30" height="30"/>
                                         <connections>
+                                            <outlet property="myImage" destination="HTb-2o-K8T" id="r30-6X-S1e"/>
                                             <outlet property="myLabel" destination="nOx-wV-SJv" id="fVC-nE-beN"/>
                                         </connections>
                                     </collectionViewCell>
