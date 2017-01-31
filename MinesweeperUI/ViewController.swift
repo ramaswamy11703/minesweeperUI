@@ -119,7 +119,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             gameOver.addAction(UIAlertAction(title: ":(", style: UIAlertActionStyle.default, handler: nil))
             self.present(gameOver, animated:true, completion: nil)
             
-            //go back to home screen
+            //self.performSegue(withIdentifier: "homeScreen", sender:self)
         }
 
     }
@@ -146,7 +146,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             gameWon.addAction(UIAlertAction(title: ":)", style: UIAlertActionStyle.default, handler: nil))
             self.present(gameWon, animated:true, completion: nil)
             
-            //go back to home screen
+            //self.performSegue(withIdentifier: "homeScreen", sender:self)
+
+            
         }
         
             }
