@@ -31,7 +31,7 @@ class Board
             for col in 0 ..< size
             {
                 //1 in 5 chance that space is a mine - potentially change
-                let randomNum = arc4random_uniform(UInt32(5))
+                let randomNum = arc4random_uniform(UInt32(7))
                 if (randomNum == 1)
                 {
                     let mObject = MinesweeperObject(row: row, col: col, neighboringMines: 0, isMine: !testing)

@@ -47,94 +47,15 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         cell.row = row
         cell.col = col
         cell.vc = self
-//
-//        
-//        if (board.gameBoard[row][col].isRevealed) {
-//            cell.myLabel.text = String(board.gameBoard[row][col].neighboringMines)
-//        }
-//        else {
-//            if (board.gameBoard[row][col].isFlagged) {
-//                cell.myLabel.text = "F"
-//            }
-//            else {
-        //cell.myLabel.text = "?"
+
         cell.myImage.image = #imageLiteral(resourceName: "unknown")
 
-            //}
-        //}
-        
-        cell.backgroundColor = UIColor.cyan // make cell more visible in our example project
-        
         return cell
     }
     
     // MARK: - UICollectionViewDelegate protocol
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        // handle tap events
-//        //how to differentiate between one and two click???
-//        print("default handler")
-//        var row:Int
-//        var col:Int
-//        
-//        row = indexPath.item / board.size
-//        col = indexPath.item % board.size
-//        
-//        
-//        let userPassed = board.handleClick(row: row, col: col)
-//        
-//        if (userPassed)
-//        {
-//            for x in 0 ..< board.size {
-//                for y in 0 ..< board.size {
-//                    var cell:MyCollectionViewCell
-//                    var ip:IndexPath
-//                    
-//                    ip = IndexPath(item: (x*board.size)+y, section: 0)
-//                    cell = collectionView.cellForItem(at: ip) as! MyCollectionViewCell
-//                    
-//                    if (board.gameBoard[x][y].isRevealed) {
-//                        let number = board.gameBoard[x][y].neighboringMines
-//                        if (number == 0) {
-//                            cell.myImage.image = #imageLiteral(resourceName: "zero")
-//                        }
-//                        if (number == 1) {
-//                            cell.myImage.image = #imageLiteral(resourceName: "one")
-//                        }
-//                        else if (number == 2) {
-//                            cell.myImage.image = #imageLiteral(resourceName: "two")
-//                        }
-//                        else if (number == 3) {
-//                            cell.myImage.image = #imageLiteral(resourceName: "three")
-//                        }
-//                        else if (number == 4) {
-//                            cell.myImage.image = #imageLiteral(resourceName: "four")
-//                        }
-//                        else if (number == 5) {
-//                            cell.myImage.image = #imageLiteral(resourceName: "five")
-//                        }
-//                    }
-//                    else {
-//                        if (board.gameBoard[row][col].isMine) {
-//                            cell.myLabel.text = "M"
-//                        }
-//                        else if (board.gameBoard[row][col].isFlagged){
-//                            cell.myLabel.text = "F"
-//                            continue
-//                        }
-//                        else {
-//                            cell.myLabel.text = "?"
-//                            cell.myImage.image = #imageLiteral(resourceName: "unknown")
-//                        }
-//                    }
-//                }
-//            }
-//            
-//        }
-//        else {
-//            //user lost. game over.
-//        }
-//    }
+
      override func viewDidLoad()
      {
          super.viewDidLoad()
@@ -178,15 +99,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                         }
                     }
                     else {
-                        if (board.gameBoard[row][col].isMine) {
+                        if (board.gameBoard[x][y].isMine) {
                             cell.myLabel.text = "M"
                         }
-                        else if (board.gameBoard[row][col].isFlagged){
-                            cell.myLabel.text = "F"
+                        else if (board.gameBoard[x][y].isFlagged) {
+                            cell.myImage.image = #imageLiteral(resourceName: "flag")
                             continue
                         }
                         else {
-                            cell.myLabel.text = "?"
                             cell.myImage.image = #imageLiteral(resourceName: "unknown")
                         }
                     }
@@ -195,7 +115,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             
         }
         else {
-            //user lost. game over.
+            let gameOver = UIAlertController(title: "BOOM", message: "You hit a mine! Game over.", preferredStyle: UIAlertControllerStyle.alert)
+            gameOver.addAction(UIAlertAction(title: ":(", style: UIAlertActionStyle.default, handler: nil))
+            self.present(gameOver, animated:true, completion: nil)
+            
+            //go back to home screen
         }
 
     }
@@ -218,38 +142,17 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         if (userWon)
         {
-            //user won! game over
+            let gameWon = UIAlertController(title: "Congrats!", message: "You won the game!!!", preferredStyle: UIAlertControllerStyle.alert)
+            gameWon.addAction(UIAlertAction(title: ":)", style: UIAlertActionStyle.default, handler: nil))
+            self.present(gameWon, animated:true, completion: nil)
+            
+            //go back to home screen
         }
         
             }
 
     }
 
-//    func doubleTapped(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
-//    {
-//        var row:Int
-//        var col:Int
-//        
-//        row = indexPath.item / board.size
-//        col = indexPath.item % board.size
-//        
-//        var cell:MyCollectionViewCell
-//        var ip:IndexPath
-//        
-//        ip = IndexPath(item: (row*board.size)+col, section: 0)
-//        cell = collectionView.cellForItem(at: ip) as! MyCollectionViewCell
-//        
-//        if (board.gameBoard[row][col].isFlagged) {
-//            cell.myLabel.text = "F"
-//        }
-//        
-//        let userWon = board.flagCell(row: row, col: col)
-//        if (userWon)
-//        {
-//            //user won! game over
-//        }
-//
-//    }
 
 
 
