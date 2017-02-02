@@ -116,13 +116,18 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
         else {
             let gameOver = UIAlertController(title: "BOOM", message: "You hit a mine! Game over.", preferredStyle: UIAlertControllerStyle.alert)
-            gameOver.addAction(UIAlertAction(title: ":(", style: UIAlertActionStyle.default, handler: nil))
+            gameOver.addAction(UIAlertAction(title: ":(", style: UIAlertActionStyle.default) { action in
+                self.performSegue(withIdentifier: "homeScreen", sender:self) })
             self.present(gameOver, animated:true, completion: nil)
-            
-            //self.performSegue(withIdentifier: "homeScreen", sender:self)
         }
 
     }
+//    
+//    func dismissAlert(_ alert:UIAlertAction) -> Void
+//    {
+//        self.performSegue(withIdentifier: "homeScreen", sender:self)
+//    }
+    
     
     func doubleTap(row:Int, col:Int)
     {
@@ -143,12 +148,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         if (userWon)
         {
             let gameWon = UIAlertController(title: "Congrats!", message: "You won the game!!!", preferredStyle: UIAlertControllerStyle.alert)
-            gameWon.addAction(UIAlertAction(title: ":)", style: UIAlertActionStyle.default, handler: nil))
+            gameWon.addAction(UIAlertAction(title: ":)", style: UIAlertActionStyle.default) { action in
+                self.performSegue(withIdentifier: "homeScreen", sender:self) })
             self.present(gameWon, animated:true, completion: nil)
-            
-            //self.performSegue(withIdentifier: "homeScreen", sender:self)
-
-            
         }
         
             }

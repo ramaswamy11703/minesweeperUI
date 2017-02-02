@@ -98,6 +98,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="OuS-az-C95" id="ljE-vZ-WYN"/>
+                        <segue destination="4pn-Eo-CDW" kind="presentation" identifier="homeScreen" id="zcd-Ns-kAT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
