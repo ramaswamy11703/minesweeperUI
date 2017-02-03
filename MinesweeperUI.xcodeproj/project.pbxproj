@@ -17,6 +17,7 @@
 		D01AF7841E355BE9007FE431 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01AF7831E355BE9007FE431 /* Board.swift */; };
 		D01AF7861E355C2A007FE431 /* MinesweeperObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01AF7851E355C2A007FE431 /* MinesweeperObject.swift */; };
 		D072588B1E3577D40029B8FF /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D072588A1E3577D40029B8FF /* MyCollectionViewCell.swift */; };
+		D0A987C31E443E07002A0FE8 /* ImageUploaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A987C21E443E07002A0FE8 /* ImageUploaderController.swift */; };
 		D0EE65D81E4049D400C10933 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE65D71E4049D400C10933 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		D01AF7831E355BE9007FE431 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		D01AF7851E355C2A007FE431 /* MinesweeperObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinesweeperObject.swift; sourceTree = "<group>"; };
 		D072588A1E3577D40029B8FF /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
+		D0A987C21E443E07002A0FE8 /* ImageUploaderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUploaderController.swift; sourceTree = "<group>"; };
 		D0EE65D71E4049D400C10933 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,6 +110,7 @@
 				D01AF7551E355BAC007FE431 /* AppDelegate.swift */,
 				D01AF7571E355BAC007FE431 /* ViewController.swift */,
 				D01AF7591E355BAC007FE431 /* Main.storyboard */,
+				D0A987C21E443E07002A0FE8 /* ImageUploaderController.swift */,
 				D0EE65D71E4049D400C10933 /* HomeViewController.swift */,
 				D01AF75C1E355BAC007FE431 /* Assets.xcassets */,
 				D01AF75E1E355BAC007FE431 /* LaunchScreen.storyboard */,
@@ -277,6 +280,7 @@
 				D01AF7581E355BAC007FE431 /* ViewController.swift in Sources */,
 				D072588B1E3577D40029B8FF /* MyCollectionViewCell.swift in Sources */,
 				D01AF7861E355C2A007FE431 /* MinesweeperObject.swift in Sources */,
+				D0A987C31E443E07002A0FE8 /* ImageUploaderController.swift in Sources */,
 				D01AF7561E355BAC007FE431 /* AppDelegate.swift in Sources */,
 				D01AF7841E355BE9007FE431 /* Board.swift in Sources */,
 				D0EE65D81E4049D400C10933 /* HomeViewController.swift in Sources */,
