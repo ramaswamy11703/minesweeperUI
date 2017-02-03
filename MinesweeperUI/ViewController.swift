@@ -119,7 +119,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             let gameOver = UIAlertController(title: "BOOM", message: "You hit a mine! Game over.", preferredStyle: UIAlertControllerStyle.alert)
             gameOver.addAction(UIAlertAction(title: ":(", style: UIAlertActionStyle.default) { action in
                 self.performSegue(withIdentifier: "boardToHome", sender:self) })
-            self.present(gameOver, animated:true, completion: nil)
+            self.present(gameOver, animated:true, completion: nil) 
         }
 
     }

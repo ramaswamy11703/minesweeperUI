@@ -193,7 +193,7 @@ class Board
         } while (locations.count != 0)
         
     }
-    
+     
     /**
      Returns true if the user has won, false if the user has not
      */

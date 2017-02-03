@@ -12,7 +12,7 @@ class MyCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var myLabel: UILabel!
      
     @IBOutlet weak var myImage: UIImageView!
-    
+     
     var row:Int = 0
     var col:Int = 0
     var vc:ViewController?

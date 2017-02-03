@@ -13,8 +13,6 @@ class MinesweeperObject
     let row:Int
     let col:Int
     
-    
-    //FIX LATER
     var isRevealed = false
     
     var neighboringMines:Int
