@@ -10,9 +10,14 @@ import UIKit
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var topView: UIView!
+    
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
     
     var board = Board(size: 10)
+    var bombView:UIImageView! = nil
+    var swiftTimer = Timer()
+    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -24,7 +29,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         return board.size * board.size
     }
     
-    // make a cell for each cell index path
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var row:Int
         var col:Int
@@ -116,14 +121,44 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             
         }
         else {
-            let gameOver = UIAlertController(title: "BOOM", message: "You hit a mine! Game over.", preferredStyle: UIAlertControllerStyle.alert)
-            gameOver.addAction(UIAlertAction(title: ":(", style: UIAlertActionStyle.default) { action in
-                self.performSegue(withIdentifier: "boardToHome", sender:self) })
-            self.present(gameOver, animated:true, completion: nil) 
+            let centerP = self.view.center
+            
+            bombView = UIImageView(frame: CGRect(x: 0, y:0, width: 50, height: 50))
+            bombView.image = #imageLiteral(resourceName: "bomb")
+            bombView.alpha = 0.5
+            
+            topView.insertSubview(bombView, aboveSubview: collectionView)
+            
+            let timing = UICubicTimingParameters(animationCurve:.easeIn)
+            let animator = UIViewPropertyAnimator(duration: 1.0, timingParameters:timing)
+            animator.addAnimations {
+                self.bombView.alpha = 1.0
+                self.bombView.center.x = centerP.x
+                self.bombView.center.y = centerP.y
+                
+                let scaleTrans = CGAffineTransform(scaleX:2, y:2)
+                let angle = CGFloat(M_PI)
+                let rotateTrans = CGAffineTransform(rotationAngle: angle)
+                scaleTrans.concatenating(rotateTrans)
+                self.bombView.transform = scaleTrans
+            }
+            animator.startAnimation()
+            
+            swiftTimer = Timer.scheduledTimer(timeInterval: 2, target:self, selector: #selector(ViewController.showAlert),
+                                              userInfo: nil, repeats: false)
+            
         }
-
+        
     }
     
+    func showAlert()
+    {
+        bombView.removeFromSuperview()
+        let gameOver = UIAlertController(title: "BOOM", message: "You hit a mine! Game over.", preferredStyle: UIAlertControllerStyle.alert)
+        gameOver.addAction(UIAlertAction(title: ":(", style: UIAlertActionStyle.default) { action in
+            self.performSegue(withIdentifier: "boardToHome", sender:self) })
+        self.present(gameOver, animated:true, completion: nil)
+    }    
     
     func doubleTap(row:Int, col:Int)
     {
