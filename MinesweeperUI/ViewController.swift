@@ -162,7 +162,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func doubleTap(row:Int, col:Int)
     {
-        print("double tap")
         var cell:MyCollectionViewCell
         var ip:IndexPath
         

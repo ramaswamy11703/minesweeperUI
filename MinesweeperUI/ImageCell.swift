@@ -10,7 +10,16 @@ import UIKit
 
 class ImageCell:UICollectionViewCell
 {
-    @IBOutlet weak var myImage: UIImageView!
 
+    @IBOutlet weak var myImage: UIImageView!
+    var ic:ImageController?
+
+    func singleTap(_ sender:UITapGestureRecognizer)
+    {
+        print("got to image cell")
+        //not being initialized correctly
+        ic?.selectImageFromPhotoLibrary(curCell: self)
+    }
     
+
 }
