@@ -8,11 +8,14 @@
 
 import UIKit
 
-class ImageCell:UICollectionViewCell
+class ImageCell : UICollectionViewCell
 {
 
+    
     @IBOutlet weak var myImage: UIImageView!
+    
     var ic:ImageController?
+    
 
     func singleTap(_ sender:UITapGestureRecognizer)
     {

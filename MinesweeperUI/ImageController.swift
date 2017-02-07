@@ -10,7 +10,7 @@ import UIKit
 
 class ImageController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate
 {
-    let reuseIdentifier = "imageCell"
+    let reuseIdentifier = "cell"
     
     @IBOutlet weak var collectionView: UICollectionView!
         
@@ -18,6 +18,8 @@ class ImageController: UIViewController, UICollectionViewDataSource, UICollectio
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        collectionView.register(ImageCell.self, forCellWithReuseIdentifier: reuseIdentifier)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -30,8 +32,7 @@ class ImageController: UIViewController, UICollectionViewDataSource, UICollectio
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! ImageCell
-        
+        let cell:ImageCell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! ImageCell
         cell.myImage.image = #imageLiteral(resourceName: "unknown")
         
         print("registered")

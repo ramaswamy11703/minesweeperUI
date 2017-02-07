@@ -70,7 +70,7 @@
         <!--Image Controller-->
         <scene sceneID="ebm-w0-ZA8">
             <objects>
-                <viewController id="U9t-qf-3QJ" customClass="ImageController" customModule="MinesweeperUI" sceneMemberID="viewController">
+                <viewController id="U9t-qf-3QJ" customClass="ImageController" customModule="MinesweeperUI" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="E0Z-Rz-DIz"/>
                         <viewControllerLayoutGuide type="bottom" id="lYK-Al-WSX"/>
@@ -89,14 +89,14 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="zRe-tY-OCi" customClass="ImageCell" customModule="MinesweeperUI" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="zRe-tY-OCi" customClass="ImageCell" customModule="MinesweeperUI" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="110" height="170"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="110" height="170"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yx0-gM-7u6">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yx0-gM-7u6">
                                                     <rect key="frame" x="0.0" y="0.0" width="110" height="170"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -104,7 +104,7 @@
                                         </view>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="myImage" destination="Yx0-gM-7u6" id="WUW-NN-AMI"/>
+                                            <outlet property="myImage" destination="Yx0-gM-7u6" id="vTm-4W-eFS"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
