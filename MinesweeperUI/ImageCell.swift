@@ -26,8 +26,10 @@ class ImageCell : UICollectionViewCell
     func selectImageFromPhotoLibrary()
     {
         let imagePickerController = UIImagePickerController()
+        let navigationController = UINavigationController()
         imagePickerController.sourceType = .photoLibrary
         imagePickerController.delegate = ic
+        navigationController.delegate = ic
         ic?.present(imagePickerController, animated:true, completion:nil)
     }
     

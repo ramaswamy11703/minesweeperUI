@@ -36,5 +36,7 @@
 	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Allows for pictures to be uploaded.</string>
+	<key></key>
+	<string></string>
 </dict>
 </plist>
