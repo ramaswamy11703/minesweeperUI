@@ -19,10 +19,31 @@ class ImageCell : UICollectionViewCell
 
     func singleTap(_ sender:UITapGestureRecognizer)
     {
-        print("got to image cell")
-        //not being initialized correctly
-        ic?.selectImageFromPhotoLibrary(curCell: self)
+        self.selectImageFromPhotoLibrary()
     }
     
-
+    
+    func selectImageFromPhotoLibrary()
+    {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .photoLibrary
+        imagePickerController.delegate = ic
+        ic?.present(imagePickerController, animated:true, completion:nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
+    {
+        
+        guard let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+        }
+        
+        myImage.image = selectedImage
+        ic?.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        // Dismiss the picker if the user canceled.
+        ic?.dismiss(animated: true, completion: nil)
+    }
 }
