@@ -64,7 +64,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
      override func viewDidLoad()
      {
          super.viewDidLoad()
-         
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
      }
     
     func singleTap(row:Int, col:Int)

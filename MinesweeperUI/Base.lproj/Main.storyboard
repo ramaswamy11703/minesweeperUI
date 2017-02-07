@@ -96,18 +96,21 @@
                                             <rect key="frame" x="0.0" y="0.0" width="110" height="170"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yx0-gM-7u6">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E4o-Ka-Bwv">
                                                     <rect key="frame" x="0.0" y="0.0" width="110" height="170"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="myImage" destination="Yx0-gM-7u6" id="vTm-4W-eFS"/>
+                                            <outlet property="myImage" destination="E4o-Ka-Bwv" id="H5n-3K-1ZP"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="U9t-qf-3QJ" id="eIY-bW-BEm"/>
+                                    <outlet property="delegate" destination="U9t-qf-3QJ" id="eV2-Ow-yZc"/>
+                                </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KfK-sb-3ZK">
                                 <rect key="frame" x="16" y="599" width="41" height="30"/>
@@ -179,8 +182,8 @@
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="9Lh-1e-7k8"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Sih-Vk-3eh"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="hJJ-Yq-Sj2"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="1PE-BV-b2x"/>
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yyq-CU-R77">

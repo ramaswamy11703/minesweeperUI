@@ -33,7 +33,10 @@ class ImageController: UIViewController, UICollectionViewDataSource, UICollectio
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell:ImageCell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! ImageCell
-        cell.myImage.image = #imageLiteral(resourceName: "unknown")
+        cell.ic = self
+        //cell.myImage.image = #imageLiteral(resourceName: "unknown")
+        cell.backgroundColor = UIColor.lightGray
+        cell.layer.borderColor = UIColor.black.cgColor
         
         print("registered")
         let tap1 = UITapGestureRecognizer(target: cell, action: #selector(ImageCell.singleTap(_:)))
@@ -43,7 +46,8 @@ class ImageController: UIViewController, UICollectionViewDataSource, UICollectio
         return cell
     }
     
-    func selectImageFromPhotoLibrary(curCell:ImageCell) {
+    func selectImageFromPhotoLibrary(curCell:ImageCell)
+    {
         
         print("got here")
         
@@ -52,17 +56,14 @@ class ImageController: UIViewController, UICollectionViewDataSource, UICollectio
         imagePickerController.delegate = self
         present(imagePickerController, animated:true, completion:nil)
         
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-            
-            // The info dictionary may contain multiple representations of the image. You want to use the original.
-            guard let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage else {
-                fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+            if let dImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+                curCell.myImage.image = dImage
+            } else{
+                print("Something went wrong")
             }
             
-            // Set photoImageView to display the selected image.
-            curCell.myImage.image = selectedImage
-            
-            dismiss(animated: true, completion: nil)
+            self.dismiss(animated: true, completion: nil)
         }
 
         
