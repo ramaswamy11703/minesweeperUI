@@ -123,6 +123,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             
         }
         else {
+            
             let centerP = self.view.center
             
             bombView = UIImageView(frame: CGRect(x: 0, y:0, width: 50, height: 50))
@@ -130,6 +131,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             bombView.alpha = 0.5
             
             topView.insertSubview(bombView, aboveSubview: collectionView)
+            
+            let rotate = CABasicAnimation(keyPath: "transform.rotation")
+            rotate.fromValue = 0
+            rotate.toValue = M_PI * 4
+            rotate.duration = 1.0
+            bombView.layer.add(rotate, forKey: "transform.rotation")
             
             let timing = UICubicTimingParameters(animationCurve:.easeIn)
             let animator = UIViewPropertyAnimator(duration: 1.0, timingParameters:timing)
@@ -139,16 +146,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 self.bombView.center.y = centerP.y
                 
                 let scaleTrans = CGAffineTransform(scaleX:2, y:2)
-                let angle = CGFloat(M_PI)
-                let rotateTrans = CGAffineTransform(rotationAngle: angle)
-                scaleTrans.concatenating(rotateTrans)
                 self.bombView.transform = scaleTrans
             }
             animator.startAnimation()
             
-            swiftTimer = Timer.scheduledTimer(timeInterval: 2, target:self, selector: #selector(ViewController.showAlert),
+            swiftTimer = Timer.scheduledTimer(timeInterval: 1.2, target:self, selector: #selector(ViewController.showAlert),
                                               userInfo: nil, repeats: false)
-            
         }
         
     }

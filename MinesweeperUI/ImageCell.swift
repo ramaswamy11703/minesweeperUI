@@ -8,34 +8,37 @@
 
 import UIKit
 
-class ImageCell : UICollectionViewCell
+class ImageCell : UICollectionViewCell, UIImagePickerControllerDelegate, UINavigationControllerDelegate
 {
 
-    @IBOutlet weak var myImage: UIImageView!
-
     
+    @IBOutlet weak var myImage: UIImageView!
     var ic:ImageController?
     
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+    
     func singleTap(_ sender:UITapGestureRecognizer)
     {
-        self.selectImageFromPhotoLibrary()
+        self.selectImageFromPhotoLibrary(sender)
     }
     
     
-    func selectImageFromPhotoLibrary()
+    func selectImageFromPhotoLibrary(_ sender:UITapGestureRecognizer)
     {
         let imagePickerController = UIImagePickerController()
-        let navigationController = UINavigationController()
+        // let navigationController = UINavigationController()
         imagePickerController.sourceType = .photoLibrary
-        imagePickerController.delegate = ic
-        navigationController.delegate = ic
+        imagePickerController.delegate = self
+        // navigationController.delegate = self
         ic?.present(imagePickerController, animated:true, completion:nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
     {
-        
         guard let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage else {
             fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
         }

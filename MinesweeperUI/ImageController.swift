@@ -10,7 +10,7 @@ import UIKit
 
 class ImageController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate
 {
-    let reuseIdentifier = "cell"
+    let reuseIdentifier = "photoCell"
     
     @IBOutlet weak var collectionView: UICollectionView!
         
@@ -19,7 +19,8 @@ class ImageController: UIViewController, UICollectionViewDataSource, UICollectio
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        collectionView.register(ImageCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        // collectionView.register(ImageCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -33,8 +34,10 @@ class ImageController: UIViewController, UICollectionViewDataSource, UICollectio
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell:ImageCell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! ImageCell
+        
+        
         cell.ic = self
-        //cell.myImage.image = #imageLiteral(resourceName: "unknown")
+        cell.myImage.image = #imageLiteral(resourceName: "unknown")
         cell.backgroundColor = UIColor.lightGray
         cell.layer.borderColor = UIColor.black.cgColor
         
